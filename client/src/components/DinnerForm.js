@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Col, Row } from 'react-bootstrap';
 
 class DinnerForm extends Component {
   constructor(props) {
@@ -12,6 +13,10 @@ class DinnerForm extends Component {
     };
   }
 
+  handleTitleInput = event => {
+    this.setState({ title: event.target.value });
+  }
+
   render() {
     return(
       <div>
@@ -19,12 +24,44 @@ class DinnerForm extends Component {
         <hr className='headerDivider' />
         <form>
           <div>
-          <label>Dinner Name: </label>
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.handleTitleInput}
-            />
+            <div>
+              <label>Dinner Name: </label>
+              <input
+                type="text"
+                value={this.state.title}
+                onChange={this.handleTitleInput}
+              />
+            </div>
+            <Grid className='firstGrid'>
+              <Row className='firstRow'>
+                <Col xs={4}>
+                  <div>
+                    <label>Ingredients:</label>
+                    <ul>
+                      <p>IngredientInput</p>
+                    </ul>
+                    <input
+                      type='button'
+                      value='Add Ingredient'
+                      onClick={this.handleAddIngredient}
+                    />
+                  </div>
+                </Col>
+                <Col xs={4}>
+                  <div>
+                    <label>Directions:</label>
+                    <ol>
+                      <p>DirectionInput</p>
+                    </ol>
+                    <input
+                      type='button'
+                      value='Add Instruction'
+                      onClick={this.handleAddDirection}
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </Grid>
           </div>
         </form>
       </div>
