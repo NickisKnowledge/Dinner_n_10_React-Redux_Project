@@ -1,0 +1,28 @@
+.mySidenav {
+  background: #222;
+  position: sticky;
+  float: left;
+  width: 280px;
+  font-family: 'Monoton';
+  padding-bottom: 99999px;
+  margin-bottom: -99999px;
+}
+
+.mySidenav a {
+  padding: 10px 5px 10px 5px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+  color: #61dafb;
+}
+
+.mySidenav a:hover {
+  color: #fff;
+}
+
+.contentBox {
+  float: right;
+  margin-top: 20px;
+  width: 40%;
+}
