@@ -1,11 +1,14 @@
 import React from 'react';
+import './Nav.css';
 
 const SideNavBar = () => {
   return (
-    <div>
-      <a href='/'>Home</a>
-      <a href='/dinners'>Dinners</a>
-      <a href='/dinners/new'>New Dinner</a>
+    <div className='mySidenav'>
+      <ul>
+        <a href='/'>Home</a>
+        <a href='/dinners'>Dinners</a>
+        <a href='/dinners/new'>New Dinner</a>
+      </ul>
     </div>
   );
 };
