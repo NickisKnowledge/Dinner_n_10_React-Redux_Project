@@ -5,7 +5,7 @@ RSpec.describe Dinner, type: :model do
   it { should have_one(:image) }
   it { should have_many(:ingredients)}
 
-  it "should validate the presence of it's title" do
+  it "should validate the presence of it's title attribute" do
     should validate_presence_of(:title)
   end
 
