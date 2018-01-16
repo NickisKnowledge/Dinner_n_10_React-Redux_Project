@@ -1,9 +1,10 @@
 .mySidenav {
   background: #222;
-  position: sticky;
+  position: relative;
   float: left;
   width: 280px;
   font-family: 'Monoton';
+  margin-right: 40px;
   padding-bottom: 99999px;
   margin-bottom: -99999px;
 }
