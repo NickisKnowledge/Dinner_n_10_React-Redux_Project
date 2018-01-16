@@ -10,9 +10,9 @@ const Home = () => {
           Dinner-n-10 is my solution!
         </p>
         <div className='preCloser'>
-          These meals are in small portion sizes because I only have to
+          These meals are in small portion sizes because I only have to prepare them for a small child
           <br />
-          prepare them for a small child and myself, nevertheless, their delicious and take
+         and myself, nevertheless, their delicious and take
           <p className='closer'>
             AT MOST 10 steps to create.
           </p>
