@@ -18,10 +18,8 @@ class App extends Component {
           </header>
         </div>
         <Router>
-          <div>
-            <p className="App-intro">
-              <SideNavBar />
-            </p>
+          <div className='overflow'>
+            <SideNavBar />
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/dinners/new' component={DinnerForm} />
