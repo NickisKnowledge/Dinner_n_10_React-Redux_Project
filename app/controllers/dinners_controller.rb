@@ -6,6 +6,26 @@ class DinnersController < ApplicationController
     render json: @dinners, status: :ok
   end
 
+  def show
+    render json: @dinner, status: :ok
+  end
+
+  def create
+    @dinner = Dinner.new(dinner_params)
+
+    if @dinner.save
+      render json: @dinner, status: :created
+    else
+      render json: { errors: @dinner.errors.full_messages,
+         message: 'Can not create dinner because:' }, status: 422
+    end
+  end
+
+  def destroy
+    @dinner.destroy
+    head :no_content
+  end
+
   private
   def dinner_params
     params.require(:dinner).permit(
