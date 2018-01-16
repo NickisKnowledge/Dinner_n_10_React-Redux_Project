@@ -4,6 +4,16 @@
   overflow: hidden;
 }
 
+.mainComponent {
+  width: 80%;
+}
+
+.mainComponent h1 {
+  font-size: 40px;
+  font-family: 'Monoton';
+}
+
+/* HEADER */
 .App {
   text-align: center;
 }
@@ -26,6 +36,27 @@
 
 .App-intro {
   font-size: large;
+}
+
+/* HOME PAGE */
+.mainComponent.home {
+  text-align: center;
+}
+
+.opener {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.preCloser {
+margin-left: 250px;
+}
+
+.closer {
+  text-align: center;
+  color: #222;
+  font-weight: bold;
+
 }
 
 @keyframes App-logo-spin {
