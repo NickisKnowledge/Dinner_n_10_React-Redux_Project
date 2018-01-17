@@ -20,7 +20,7 @@ class Dinners extends Component {
         <Switch>
           <Route exact path={`${match.url}`}
             render={() => (
-              <div className="container" style={{textAlign: '-webkit-center'}}>
+              <div className="mainComponent" >
                 <h1>Bon Appétit</h1>
                 <hr className='headerDivider' />
                 <DinnerList dinners={dinners} url={match.url} />

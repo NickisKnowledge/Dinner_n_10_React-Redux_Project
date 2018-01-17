@@ -112,8 +112,8 @@ class DinnerForm extends Component {
     let isEnabled = this.canBeSubmitted();
 
     return(
-      <div>
-        <h1>Add your Recipe</h1>
+      <div className='mainComponent'>
+        <h1 className='formHeader'>Add your Recipe</h1>
         <hr className='headerDivider' />
         <form onSubmit={event => this.handleOnSubmit(event)}>
           <div>
@@ -187,7 +187,9 @@ class DinnerForm extends Component {
                     Submit
                   </button>
                   <br />
-                  <a onClick={() => this.props.history.push('/dinners')}>
+                  <a className='cancelLink'
+                    onClick={() => this.props.history.push('/dinners')}
+                  >
                     Cancel
                   </a>
                 </Col>

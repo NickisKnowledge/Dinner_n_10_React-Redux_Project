@@ -9,6 +9,15 @@ h1 {
 	font-size: 40px;
 }
 
+.mainComponent {
+  margin-left: 20%;
+}
+
+.headerDivider {
+  width: 80%;
+  margin-left: 0px;
+}
+
 /* HEADER */
 .App {
   text-align: center;
@@ -20,9 +29,9 @@ h1 {
 }
 
 .App-header {
-  background-color: #222;
   height: 150px;
   color: white;
+  background-color: #222;
 }
 
 .App-title {
@@ -30,52 +39,61 @@ h1 {
 }
 
 /* HOME PAGE */
-.container h3 {
-  margin-top: 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.container h1 {
-  text-align: center;
+.mainComponent h1 {
+  margin-left: 25%;
   color: #222;
 }
 
-h1 + h3 {
-  font-weight: 400;
+.mainComponent h3 {
   font-size: 25px;
+  color: #fff;
+  margin-top: 20px;
+  margin-left: 15%;
 }
 
 .opener {
-  font-size: 36px;
   color: #222;
+  font-size: 36px;
+  margin-left: 26%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .preCloser {
-  margin-left: 15px;
+  color: #fff;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: 10%;
+}
+
+.midCloser {
+  color: #fff;
+  font-size: 25px;
+  margin-left: 22%;
+  margin-bottom: 0px;
 }
 
 .closer {
-  text-align: center;
   color: #222;
+  font-size: 25px;
   font-weight: bold;
+  margin-left: 32%;
 }
 
 /* FORM */
+h1.formHeader {
+  margin-left: 0;
+}
+
 .firstGrid {
   margin-top: 30px;
   padding-left: 0px;
-}
-
-.ingredient.col-xs-4 {
-  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .direction.col-xs-4 {
   width: 40%;
-  padding-right: 0px;
 }
 
 .secondRow {
@@ -85,7 +103,6 @@ h1 + h3 {
 
 .dropzone.col-xs-4 {
   width: 35%;
-  padding-left: 0px;
 }
 
 .imageDisplay {
@@ -94,6 +111,11 @@ h1 + h3 {
 
 .submitButton {
   margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.cancelLink {
+  margin-left: 20px;
 }
 
 label {
@@ -116,11 +138,16 @@ textarea[type="text"] {
 
 /* INDEX PAGE */
 .dinnerIndexTitle {
-color: white;
+  color: white;
+}
+
+.listDinners {
+  margin-left: 25%;
 }
 
 /* SHOW PAGE */
 h1.dinnerCardTitle {
+  margin-left: 0px;
   color: #fff;
   font-family: Arvo;
   font-weight: bold;
@@ -131,6 +158,10 @@ h1.dinnerCardTitle {
   -webkit-transform: scaleY(0.7);
   -moz-transform: scaleY(0.7);
   font-size: 60px;
+}
+
+.secondGrid {
+  margin-left: 0px;
 }
 
 h3.dinnerCardLabel {
@@ -159,8 +190,8 @@ ul.IngredientsList li, ol.DirectionsList li {
 h2.dinnerCardCloser {
   color: white;
   font-size: 60px;
-  text-align: center;
-  margin-left: 230px;
+  margin-left: 10px;
+  margin-left: 35%;
   margin-bottom: 40px;
 }
 

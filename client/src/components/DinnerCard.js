@@ -7,10 +7,10 @@ const DinnerCard = ({ dinner, deleteDinner, history }) => {
   const createdDate = moment(dinner.created_at).format('MMMM Do YYYY');
 
   return (
-    <div>
+    <div className='mainComponent'>
       <h1 className='dinnerCardTitle'>{dinner.title}</h1>
       <hr className='headerDivider' />
-      <Grid>
+      <Grid className='secondGrid'>
         <Row className='show-grid'>
           <Col xs={6} className='dinnerCardPhoto'>
             <Image
