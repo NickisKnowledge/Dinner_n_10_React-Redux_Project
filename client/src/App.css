@@ -95,6 +95,10 @@ h1 + h3 {
   margin-top: 20px;
 }
 
+.submitButton {
+  margin-bottom: 20px;
+}
+
 label {
   color: #fff;
   font-size: 30px;

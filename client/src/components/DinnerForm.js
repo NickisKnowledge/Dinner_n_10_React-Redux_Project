@@ -89,7 +89,7 @@ class DinnerForm extends Component {
         onClick={this.handleImageRemoval.bind(this)}
       />
       }
-      
+
     return(
       <div>
         <h1>Add your Recipe</h1>
@@ -154,6 +154,15 @@ class DinnerForm extends Component {
                     style={{width: 400, height:267}}
                   />
                   {deleteImage}
+                </Col>
+              </Row>
+              <Row className='thirdRow'>
+                <Col xx={4}>
+                  <button className='submitButton'>Submit</button>
+                  <br />
+                  <a onClick={() => this.props.history.push('/dinners')}>
+                    Cancel
+                  </a>
                 </Col>
               </Row>
             </Grid>
