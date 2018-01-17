@@ -1,6 +1,6 @@
 
 # Dinner_n_10_React-Redux_Project
-
+Dinner-n-10 is an on line cookbook, full of a lazy persons recipes. That lazy person is definitely me! I don't like to cook and this dislike has become quite an issue with being a mom. Therefore, I created this wonderful recipe collection, of all the things I can make that are quick, easy and **take up to 10 steps to create**. So, let me know what you think, and as usual I hope you enjoy my site!
 
 ## Installation
 
