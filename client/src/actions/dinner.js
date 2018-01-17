@@ -19,3 +19,14 @@ export const removeDinner = dinnerId => {
     dinnerId
   };
 };
+
+const API_URL = 'http://localhost:3001';
+export const fetchDinners = () => {
+  return dispatch => {
+    return fetch(`${API_URL}/dinners`)
+    .then(res => res.json())
+    .then(dinners => {
+      dispatch(setDinners(dinners));
+    }).catch(err => console.log(err))
+  };
+};
