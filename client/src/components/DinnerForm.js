@@ -39,6 +39,15 @@ class DinnerForm extends Component {
     });
   };
 
+  handleDirectionInput = (index) => (event) => {
+    let newDirections;
+    newDirections = this.state.directions_attributes.map((direction, idx) => {
+      if (index !== idx) return direction;
+      return { ...direction, step: event.target.value };
+    });
+    this.setState({ directions_attributes: newDirections });
+  };
+
   render() {
     return(
       <div>
