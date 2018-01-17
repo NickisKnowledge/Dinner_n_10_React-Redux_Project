@@ -3,6 +3,7 @@ import { Grid, Col, Row } from 'react-bootstrap';
 import IngredientInput from './IngredientInput';
 import DirectionInput from './DirectionInput';
 import ImageUploader from './ImageUploader';
+import Image from './Image';
 
 class DinnerForm extends Component {
   constructor(props) {
@@ -129,9 +130,9 @@ class DinnerForm extends Component {
                   />
                 </Col>
                 <Col xs={4} className='imageDisplay'>
-                  <img
-                    src={this.state.image_attributes.url}
-                    alt={this.state.image_attributes.name}
+                  <Image
+                    imageURL={this.state.image_attributes.url}
+                    imageName={this.state.image_attributes.name}
                   />
                 </Col>
               </Row>
