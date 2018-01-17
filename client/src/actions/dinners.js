@@ -52,3 +52,17 @@ export const createDinner = (dinner, routerHistory) => {
     }).catch(err => console.log(err));
   };
 };
+
+export const deleteDinner = (dinnerId, routerHistory) => {
+  return dispatch => {
+    return fetch(`${API_URL}/dinners/${dinnerId}`, {
+      method: 'DELETE'
+    })
+    .then(res => {
+      if (res.status === 204) {
+        routerHistory.replace('/dinners')
+        dispatch(removeDinner(dinnerId));
+      }
+    }).catch(err =>  console.log(err));
+  };
+};
