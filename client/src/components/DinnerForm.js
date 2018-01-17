@@ -115,8 +115,6 @@ class DinnerForm extends Component {
                 </Col>
               </Row>
               <Row className='secondRow'>
-                <Col xs={1} className='sideNavSpace'>
-                </Col>
                 <Col xs={4} className='dropzone'>
                   <ImageUploader />
                 </Col>

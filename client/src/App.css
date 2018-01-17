@@ -69,6 +69,7 @@ h1 + h3 {
 /* FORM */
 .firstGrid {
   margin-top: 30px;
+  padding-left: 0px;
 }
 
 .ingredient.col-xs-4 {
