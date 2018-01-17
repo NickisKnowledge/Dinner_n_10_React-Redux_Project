@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { fetchDinners } from '../actions/dinners';
+import DinnerList from '../components/DinnerList'
 
 const mapStateToProps = state => { return { dinners: state.dinners } };
 
@@ -12,30 +13,26 @@ class Dinners extends Component {
 
   render() {
     const {dinners, match} = this.props;
-    const showDinners = dinners.map(dinner => {
-      return (
-        <div>
-          <Link
-          to={`${match.url}/${dinner.id}`}
-          key={dinner.id}
-          style={{ textDecoration: 'none' }}
-          >
-            <h2>{dinner.title}</h2>
-          </Link>
-          <hr className='headerDivider' />
-        </div>
-      )
-     }
-     );
 
     return (
-      <div class='container'>
-        <h1>Bon Appétit</h1>
-        <hr/>
-        {showDinners}
+      <div>
+        <Switch>
+          <Route exact path={`${match.url}`}
+            render={() => (
+              <div className="container" style={{textAlign: '-webkit-center'}}>
+                <h1>Bon Appétit</h1>
+                <hr className='headerDivider' />
+                <DinnerList dinners={dinners} url={match.url} />
+              </div>
+            )}
+          />
+          <Route path={`${match.url}/:dinnerId`}
+            render={() => <h1>DinnerShow</h1>}
+          />
+        </Switch>
       </div>
-    )
-  }
+    );
+  };
 };
 
 export default connect(mapStateToProps, { fetchDinners })(Dinners);
