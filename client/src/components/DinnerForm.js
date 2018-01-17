@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
 import IngredientInput from './IngredientInput';
+import DirectionInput from './DirectionInput';
 
 class DinnerForm extends Component {
   constructor(props) {
@@ -86,7 +87,10 @@ class DinnerForm extends Component {
                   <div>
                     <label>Directions:</label>
                     <ol>
-                      <p>DirectionInput</p>
+                      <DirectionInput
+                        state={this.state}
+                        handleDirectionInput={this.handleDirectionInput}
+                      />
                     </ol>
                     <input
                       type='button'
