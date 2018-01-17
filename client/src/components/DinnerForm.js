@@ -62,6 +62,14 @@ class DinnerForm extends Component {
     });
   };
 
+  handleImageUpload = photoInfo => {
+    const dinnerImageInfo = {...this.state.image_attributes};
+      dinnerImageInfo.url = photoInfo.imageURL;
+      dinnerImageInfo.name = photoInfo.imageName;
+
+    this.setState({ image_attributes: dinnerImageInfo });
+  };
+
   render() {
     return(
       <div>
