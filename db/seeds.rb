@@ -47,8 +47,7 @@ ex3 = {
     '6': {'step': "Now you fill a cup with broccoli and add water. If frozen cook for 2 minutes in the microwave."},
     '7': {'step': "If cooking fresh broccoli slice off the bottom inch of the stem. Chop the remaining broccoli into small pieces. Put pieces into a cup, add 2-3 tablespoons of water and cover with a plate. Cook for 3-4 minutes in the microwave."},
     '8': {'step': "If you don't have a toaster, toast bread in oven on broil. Watch your bread it will cook fast! If you have a toaster, use it!."},
-    '9': {'step': "After about 7-10 minutes turn the stove off & add broccoli to your pasta."},
-    '10': {'step': "Then put your pasta on a plate or bowl and grab your bread."},
+    '9': {'step': "After about 7-10 minutes turn the stove off & add broccoli to your pasta.Then put your pasta on a plate or bowl and grab your bread."}
   },
   'image_attributes': {
     'name': "broccoli_alfredo-2-2-590x826", 'url': "https://res.cloudinary.com/nickisknowledge/image/upload/v1515899099/ak4uegrufz0kgblh264p.jpg"
