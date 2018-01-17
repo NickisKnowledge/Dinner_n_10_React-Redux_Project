@@ -14,9 +14,9 @@ class DirectionInput extends Component {
             onChange={handleDirectionInput(idx)}
           />
         </li>
-      ))
-    )
-  }
-}
+      ));
+    );
+  };
+};
 
 export default DirectionInput;
