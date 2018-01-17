@@ -88,6 +88,7 @@ h1 + h3 {
 
 .dropzone.col-xs-4 {
   width: 35%;
+  padding-left: 0px;
 }
 
 label {
