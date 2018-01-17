@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { fetchDinners } from '../actions/dinners';
 import DinnerList from '../components/DinnerList'
+import DinnerShow from './DinnerShow';
 
 const mapStateToProps = state => { return { dinners: state.dinners } };
 
@@ -26,9 +27,7 @@ class Dinners extends Component {
               </div>
             )}
           />
-          <Route path={`${match.url}/:dinnerId`}
-            render={() => <h1>DinnerShow</h1>}
-          />
+          <Route path={`${match.url}/:dinnerId`} component={DinnerShow} />
         </Switch>
       </div>
     );
