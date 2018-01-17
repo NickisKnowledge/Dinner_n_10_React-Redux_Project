@@ -33,7 +33,7 @@ class DinnerForm extends Component {
     });
   };
 
-  handleRemoveIngredient = (index) => () =>  {
+  handleIngredientRemoval = (index) => () =>  {
     this.setState({
       ingredients_attributes: this.state.ingredients_attributes.filter((name, idx) => index !== idx),
     });
@@ -63,7 +63,7 @@ class DinnerForm extends Component {
                       <IngredientInput
                         state={this.state}
                         handleIngredientInput={this.handleIngredientInput}
-                        handleRemoveIngredient={this.handleRemoveIngredient}
+                        handleIngredientRemoval={this.handleIngredientRemoval}
                       />
                     </ul>
                     <input
