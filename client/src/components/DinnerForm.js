@@ -17,6 +17,15 @@ class DinnerForm extends Component {
     this.setState({ title: event.target.value });
   }
 
+  handleIngredientInput = (index) => (event) => {
+    let newIngredients;
+    newIngredients = this.state.ingredients_attributes.map((ingredient, idx) => {
+      if (index !== idx) {return ingredient};
+      return { ...ingredient, name: event.target.value }
+    });
+    this.setState({ ingredients_attributes: newIngredients });
+  }
+
   render() {
     return(
       <div>
