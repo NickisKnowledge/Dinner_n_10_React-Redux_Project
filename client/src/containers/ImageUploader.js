@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import sha1 from 'sha1';
+import superagent from 'superagent';
 
 class ImageUploader extends Component {
   constructor(props) {
@@ -31,6 +32,26 @@ class ImageUploader extends Component {
       'signature': signature,
     }
 
+    let uploadRequest = superagent.post(url);
+    uploadRequest.attach('file', image);
+
+    Object.keys(params).forEach( key => {
+      uploadRequest.field(key, params[key])
+    });
+
+    uploadRequest.end((err, resp) => {
+      if (err) {
+        alert(err);
+        return
+      };
+
+      const url = resp.body.secure_url
+      const photoName = resp.body.original_filename
+      this.setState({
+        imageURL: url,
+        imageName: photoName,
+      });
+    })
   };
 
   render() {
@@ -38,6 +59,7 @@ class ImageUploader extends Component {
       <div className='imageDiv'>
         <label>Add a photo of your Recipe here</label>
         <Dropzone onDrop={this.uploadFile.bind(this)} />
+        <img src={this.state.imageURL} alt={this.state.imageName} />
       </div>
     )
   };
