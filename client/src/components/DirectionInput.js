@@ -6,9 +6,8 @@ class DirectionInput extends Component {
 
     return (
       state.directions_attributes.map((instruction, idx) => (
-        <li className='direction' key={idx}>
+        <li key={idx}>
           <textarea
-            style={{verticalAlign: 'middle', marginBottom: '10px'}}
             type='text'
             value={instruction.step}
             onChange={handleDirectionInput(idx)}

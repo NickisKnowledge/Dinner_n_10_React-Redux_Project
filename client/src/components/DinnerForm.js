@@ -78,7 +78,7 @@ class DinnerForm extends Component {
             </div>
             <Grid className='firstGrid'>
               <Row className='firstRow'>
-                <Col xs={4}>
+                <Col xs={4} className='ingredient'>
                   <div>
                     <label>Ingredients:</label>
                     <ul>
@@ -95,7 +95,7 @@ class DinnerForm extends Component {
                     />
                   </div>
                 </Col>
-                <Col xs={4}>
+                <Col xs={4} className='direction'>
                   <div>
                     <label>Directions:</label>
                     <ol>

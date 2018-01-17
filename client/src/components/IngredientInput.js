@@ -6,7 +6,7 @@ class IngredientInput extends Component {
 
     return (
       state.ingredients_attributes.map((ingredient, idx) => (
-        <li className='ingredient' key={idx}>
+        <li key={idx}>
           <input
             style={{marginBottom: '10px'}}
             type='text'
