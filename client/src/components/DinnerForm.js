@@ -49,6 +49,12 @@ class DinnerForm extends Component {
     this.setState({ directions_attributes: newDirections });
   };
 
+  handleAddDirection = () => {
+    this.setState({
+      directions_attributes: this.state.directions_attributes.concat([{ step: '' }])
+    });
+  };
+
   render() {
     return(
       <div>
