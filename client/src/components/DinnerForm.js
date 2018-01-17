@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
 import IngredientInput from './IngredientInput';
 import DirectionInput from './DirectionInput';
-import ImageUploader from '../containers/ImageUploader';
+import ImageUploader from './ImageUploader';
 
 class DinnerForm extends Component {
   constructor(props) {
