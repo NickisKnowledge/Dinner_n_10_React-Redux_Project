@@ -4,9 +4,6 @@ import sha1 from 'sha1';
 import superagent from 'superagent';
 
 class ImageUploader extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   uploadFile = (files) => {
     const image = files[0];
