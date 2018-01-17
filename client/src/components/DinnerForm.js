@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
+import IngredientInput from './IngredientInput';
 
 class DinnerForm extends Component {
   constructor(props) {
@@ -47,7 +48,10 @@ class DinnerForm extends Component {
                   <div>
                     <label>Ingredients:</label>
                     <ul>
-                      <p>IngredientInput</p>
+                      <IngredientInput
+                        state={this.state}
+                        handleIngredientInput={this.handleIngredientInput}
+                      />
                     </ul>
                     <input
                       type='button'
