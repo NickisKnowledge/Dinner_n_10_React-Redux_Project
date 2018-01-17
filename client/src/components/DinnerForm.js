@@ -33,8 +33,10 @@ class DinnerForm extends Component {
     });
   };
 
-  handleRemoveIngredient = () => {
-
+  handleRemoveIngredient = (index) => () =>  {
+    this.setState({
+      ingredients_attributes: this.state.ingredients_attributes.filter((name, idx) => index !== idx),
+    });
   };
 
   render() {
