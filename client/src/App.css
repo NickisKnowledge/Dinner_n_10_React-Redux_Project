@@ -91,6 +91,10 @@ h1 + h3 {
   padding-left: 0px;
 }
 
+.imageDisplay {
+  margin-top: 20px;
+}
+
 label {
   color: #fff;
   font-size: 30px;
