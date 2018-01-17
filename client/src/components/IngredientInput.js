@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class IngredientInput extends Component {
   render() {
-    const { state, handleIngredientInput } = this.props;
+    const { state, handleIngredientInput, handleRemoveIngredient } = this.props;
 
     return (
       state.ingredients_attributes.map((ingredient, idx) => (
@@ -12,6 +12,12 @@ class IngredientInput extends Component {
             type='text'
             value={ingredient.name}
             onChange={handleIngredientInput(idx)}
+          />
+          <input
+            type='button'
+            value='X'
+            onClick={handleRemoveIngredient(idx)}
+            className='small'
           />
         </li>
       ))

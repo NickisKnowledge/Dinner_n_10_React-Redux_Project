@@ -33,6 +33,10 @@ class DinnerForm extends Component {
     });
   };
 
+  handleRemoveIngredient = () => {
+
+  };
+
   render() {
     return(
       <div>
@@ -57,6 +61,7 @@ class DinnerForm extends Component {
                       <IngredientInput
                         state={this.state}
                         handleIngredientInput={this.handleIngredientInput}
+                        handleRemoveIngredient={this.handleRemoveIngredient}
                       />
                     </ul>
                     <input
