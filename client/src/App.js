@@ -5,7 +5,6 @@ import SideNavBar from './components/nav/SideNavBar';
 import Home from './components/Home'
 import DinnerForm from './components/DinnerForm'
 import Dinners from './containers/Dinners'
-import './App.css';
 
 class App extends Component {
   render() {
