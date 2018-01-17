@@ -113,10 +113,12 @@ textarea[type="text"] {
   vertical-align: middle;
   margin-bottom: 10px;
 }
+
 /* INDEX PAGE */
 .dinnerIndexTitle {
 color: white;
 }
+
 /* SHOW PAGE */
 h1.dinnerCardTitle {
   color: #fff;
