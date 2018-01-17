@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { createDinner } from '../actions/dinners';
 import { Grid, Col, Row } from 'react-bootstrap';
 import IngredientInput from './IngredientInput';
 import DirectionInput from './DirectionInput';
@@ -78,7 +79,19 @@ class DinnerForm extends Component {
       dinnerImageInfo.name = '';
 
     this.setState({ image_attributes: dinnerImageInfo });
-  }
+  };
+
+  canBeSubmitted = () => {
+    const { title, ingredients_attributes,
+      directions_attributes, image_attributes } = this.state;
+
+    return (
+      title.length > 0 &&
+      ingredients_attributes[0]['name'].length > 0 &&
+      directions_attributes[0]['step'].length > 0 &&
+      image_attributes['url'].length > 0
+    );
+  };
 
   handleOnSubmit(event) {
     event.preventDefault();
@@ -94,7 +107,9 @@ class DinnerForm extends Component {
         className='deleteImageButton'
         onClick={this.handleImageRemoval}
       />
-      }
+    }
+
+    const isEnabled = this.canBeSubmitted();
 
     return(
       <div>
@@ -167,6 +182,7 @@ class DinnerForm extends Component {
                   <button
                     type="submit"
                     className='submitButton'
+                    disabled={!isEnabled}
                   >
                     Submit
                   </button>
@@ -184,4 +200,4 @@ class DinnerForm extends Component {
   }
 };
 
-export default connect(null, { createDinner })(DinerForm);
+export default connect(null, { createDinner })(DinnerForm);
