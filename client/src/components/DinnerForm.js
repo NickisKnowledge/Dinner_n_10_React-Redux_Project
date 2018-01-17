@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
 import IngredientInput from './IngredientInput';
 import DirectionInput from './DirectionInput';
+import ImageUploader from '../containers/ImageUploader';
 
 class DinnerForm extends Component {
   constructor(props) {
@@ -111,6 +112,13 @@ class DinnerForm extends Component {
                       onClick={this.handleAddDirection}
                     />
                   </div>
+                </Col>
+              </Row>
+              <Row className='secondRow'>
+                <Col xs={1} className='sideNavSpace'>
+                </Col>
+                <Col xs={4} className='dropzone'>
+                  <ImageUploader />
                 </Col>
               </Row>
             </Grid>
