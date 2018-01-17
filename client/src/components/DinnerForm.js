@@ -71,7 +71,25 @@ class DinnerForm extends Component {
     this.setState({ image_attributes: dinnerImageInfo });
   };
 
+  handleImageRemoval = () => {
+    const dinnerImageInfo = {...this.state.image_attributes};
+      dinnerImageInfo.url = '';
+      dinnerImageInfo.name = '';
+
+    this.setState({ image_attributes: dinnerImageInfo });
+  }
+
   render() {
+    let deleteImage = ''
+    if (this.state.image_attributes.url) {
+      deleteImage = <input
+        type='button'
+        value='X'
+        className='deleteImageButton'
+        onClick={this.handleImageRemoval.bind(this)}
+      />
+      }
+      
     return(
       <div>
         <h1>Add your Recipe</h1>
@@ -133,7 +151,9 @@ class DinnerForm extends Component {
                   <Image
                     imageURL={this.state.image_attributes.url}
                     imageName={this.state.image_attributes.name}
+                    style={{width: 400, height:267}}
                   />
+                  {deleteImage}
                 </Col>
               </Row>
             </Grid>
