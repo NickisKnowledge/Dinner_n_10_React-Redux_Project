@@ -6,11 +6,6 @@ import superagent from 'superagent';
 class ImageUploader extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      imageURL: '',
-      imageName: '',
-    };
   }
 
   uploadFile = (files) => {
@@ -47,10 +42,7 @@ class ImageUploader extends Component {
 
       const url = resp.body.secure_url
       const photoName = resp.body.original_filename
-      this.setState({
-        imageURL: url,
-        imageName: photoName,
-      });
+      this.props.parentImageUpload({imageURL: url, imageName: photoName});
     })
   };
 
@@ -59,7 +51,6 @@ class ImageUploader extends Component {
       <div className='imageDiv'>
         <label>Add a photo of your Recipe here</label>
         <Dropzone onDrop={this.uploadFile.bind(this)} />
-        <img src={this.state.imageURL} alt={this.state.imageName} />
       </div>
     )
   };

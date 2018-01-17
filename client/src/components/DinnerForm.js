@@ -124,7 +124,15 @@ class DinnerForm extends Component {
               </Row>
               <Row className='secondRow'>
                 <Col xs={4} className='dropzone'>
-                  <ImageUploader />
+                  <ImageUploader
+                    parentImageUpload={this.handleImageUpload}
+                  />
+                </Col>
+                <Col xs={4} className='imageDisplay'>
+                  <img
+                    src={this.state.image_attributes.url}
+                    alt={this.state.image_attributes.name}
+                  />
                 </Col>
               </Row>
             </Grid>
