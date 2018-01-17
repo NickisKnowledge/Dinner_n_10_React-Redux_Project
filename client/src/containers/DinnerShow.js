@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import DinnerCard from '../components/DinnerCard';
+import { deleteDinner } from  '../actions/dinners'
 
 const mapStateToProps = (state, ownProps) => {
   return ({ dinner: state.dinners.find(dinner =>
@@ -9,21 +12,22 @@ const mapStateToProps = (state, ownProps) => {
 
 class DinnerShow extends Component {
   render() {
-    const { dinner } = this.props;
+    const {dinner, match, history, deleteDinner} = this.props;
+
     return (
       <div>
-        <h1>{dinner.title}</h1>
-        <hr/>
-        <h3>Ingredients List</h3>
-        <h3>Directions List</h3>
-        <img
-          src={dinner.image.url}
-          alt={dinner.image.name}
-          style={{width: 200, height: 200}}
-        />
+        <Route exact path={match.url} render={() => (
+          <div>
+            <DinnerCard
+              dinner={dinner}
+              deleteDinner={deleteDinner}
+              history={history}
+             />
+          </div>
+        )} />
       </div>
-    )
-  }
+    );
+  };
 };
 
-export default connect(mapStateToProps)(DinnerShow);
+export default connect(mapStateToProps, { deleteDinner })(DinnerShow);
