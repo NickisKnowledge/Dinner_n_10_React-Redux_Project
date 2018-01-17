@@ -55,6 +55,12 @@ class DinnerForm extends Component {
     });
   };
 
+  handleDirectionRemoval = (index) => () => {
+    this.setState({
+      directions_attributes: this.state.directions_attributes.filter((step, idx) => index !== idx)
+    });
+  };
+
   render() {
     return(
       <div>
@@ -96,6 +102,7 @@ class DinnerForm extends Component {
                       <DirectionInput
                         state={this.state}
                         handleDirectionInput={this.handleDirectionInput}
+                        handleDirectionRemoval={this.handleDirectionRemoval}
                       />
                     </ol>
                     <input

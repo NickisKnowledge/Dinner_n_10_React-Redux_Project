@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class DirectionInput extends Component {
   render() {
-    const { state, handleDirectionInput } = this.props;
+    const { state, handleDirectionInput, handleDirectionRemoval } = this.props;
 
     return (
       state.directions_attributes.map((instruction, idx) => (
@@ -12,6 +12,12 @@ class DirectionInput extends Component {
             type='text'
             value={instruction.step}
             onChange={handleDirectionInput(idx)}
+          />
+          <input
+            type='button'
+            value='X'
+            onClick={handleDirectionRemoval(idx)}
+            className='small'
           />
         </li>
       ))
