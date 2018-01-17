@@ -71,9 +71,22 @@ h1 + h3 {
   margin-top: 30px;
 }
 
+.ingredient.col-xs-4 {
+  padding-left: 0px;
+}
+
 .direction.col-xs-4 {
   width: 40%;
   padding-right: 0px;
+}
+
+.secondRow {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dropzone.col-xs-4 {
+  width: 35%;
 }
 
 label {
