@@ -22,7 +22,7 @@ class IngredientInput extends Component {
         </li>
       ))
     )
-  }
-}
+  };
+};
 
 export default IngredientInput;
