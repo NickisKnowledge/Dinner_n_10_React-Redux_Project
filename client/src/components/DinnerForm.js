@@ -17,7 +17,7 @@ class DinnerForm extends Component {
       directions_attributes: [{ step: '' }],
       image_attributes: {url: '', name: ''},
     };
-  }
+  };
 
   handleTitleInput = event => {
     this.setState({ title: event.target.value });
@@ -109,7 +109,7 @@ class DinnerForm extends Component {
       />
     }
 
-    const isEnabled = this.canBeSubmitted();
+    let isEnabled = this.canBeSubmitted();
 
     return(
       <div>
@@ -197,7 +197,7 @@ class DinnerForm extends Component {
         </form>
       </div>
     );
-  }
+  };
 };
 
 export default connect(null, { createDinner })(DinnerForm);

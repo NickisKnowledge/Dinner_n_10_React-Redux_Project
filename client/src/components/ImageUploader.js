@@ -4,7 +4,6 @@ import sha1 from 'sha1';
 import superagent from 'superagent';
 
 class ImageUploader extends Component {
-
   uploadFile = (files) => {
     const image = files[0];
     const cloudName = 'nickisknowledge'
@@ -22,7 +21,7 @@ class ImageUploader extends Component {
       'timestamp': timestamp,
       'upload_preset': uploadPreset,
       'signature': signature,
-    }
+    };
 
     let uploadRequest = superagent.post(url);
     uploadRequest.attach('file', image);
@@ -40,7 +39,7 @@ class ImageUploader extends Component {
       const url = resp.body.secure_url
       const photoName = resp.body.original_filename
       this.props.parentImageUpload({imageURL: url, imageName: photoName});
-    })
+    });
   };
 
   render() {
@@ -49,7 +48,7 @@ class ImageUploader extends Component {
         <label>Add a photo of your Recipe here</label>
         <Dropzone onDrop={this.uploadFile.bind(this)} />
       </div>
-    )
+    );
   };
 };
 

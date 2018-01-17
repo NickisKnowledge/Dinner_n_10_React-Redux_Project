@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { Grid, Col, Row } from 'react-bootstrap';
-import Image from './Image'
+import Image from './Image';
 
 const DinnerCard = ({ dinner, deleteDinner, history }) => {
   const createdDate = moment(dinner.created_at).format('MMMM Do YYYY');
