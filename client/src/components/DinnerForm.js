@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Grid, Col, Row } from 'react-bootstrap';
 import IngredientInput from './IngredientInput';
 import DirectionInput from './DirectionInput';
@@ -79,6 +80,11 @@ class DinnerForm extends Component {
     this.setState({ image_attributes: dinnerImageInfo });
   }
 
+  handleOnSubmit(event) {
+    event.preventDefault();
+    this.props.createDinner(this.state, this.props.history)
+  };
+
   render() {
     let deleteImage = ''
     if (this.state.image_attributes.url) {
@@ -86,7 +92,7 @@ class DinnerForm extends Component {
         type='button'
         value='X'
         className='deleteImageButton'
-        onClick={this.handleImageRemoval.bind(this)}
+        onClick={this.handleImageRemoval}
       />
       }
 
@@ -94,7 +100,7 @@ class DinnerForm extends Component {
       <div>
         <h1>Add your Recipe</h1>
         <hr className='headerDivider' />
-        <form>
+        <form onSubmit={event => this.handleOnSubmit(event)}>
           <div>
             <div>
               <label>Dinner Name: </label>
@@ -158,7 +164,12 @@ class DinnerForm extends Component {
               </Row>
               <Row className='thirdRow'>
                 <Col xx={4}>
-                  <button className='submitButton'>Submit</button>
+                  <button
+                    type="submit"
+                    className='submitButton'
+                  >
+                    Submit
+                  </button>
                   <br />
                   <a onClick={() => this.props.history.push('/dinners')}>
                     Cancel
@@ -173,4 +184,4 @@ class DinnerForm extends Component {
   }
 };
 
-export default DinnerForm;
+export default connect(null, { createDinner })(DinerForm);
