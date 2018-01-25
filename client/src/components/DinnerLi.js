@@ -9,15 +9,20 @@ class DinnerLi extends Component {
     super(props);
 
     this.state = {
-      votes: 0
+      id: '',
+      title: '',
+      rating: 0,
+      ingredients_attributes: [{ name: '' }],
+      directions_attributes: [{ step: '' }],
+      image_attributes: {url: '', name: ''},
     };
   }
 
   handleClick = () => {
-    let currentVotes = this.state.votes
-    this.setState({
-      votes:  currentVotes += 1
-    });
+    // let currentVotes = this.state.votes
+    // this.setState({
+    //   votes:  currentVotes += 1
+    // });
   };
 
   render() {
@@ -39,7 +44,7 @@ class DinnerLi extends Component {
           </Link>
           <input type='button' value='Like me' onClick={this.handleClick.bind(this) } />
           <div>
-            {this.state.votes}
+            {dinner.rating}
           </div>
         </div>
         <hr className='headerDivider' />
