@@ -10,6 +10,10 @@ export const removeDinner = dinnerId => {
   return { type: 'REMOVE_DINNER', dinnerId };
 };
 
+export const substituteDinner = dinner => {
+  return { type: 'SUBSTITUTE_DINNER', dinner };
+};
+
 const API_URL = 'http://localhost:3001';
 export const fetchDinners = () => {
   return dispatch => {
@@ -54,5 +58,22 @@ export const deleteDinner = (dinnerId, routerHistory) => {
         dispatch(removeDinner(dinnerId));
       }
     }).catch(err =>  console.log(err));
+  };
+};
+
+export const updateDinner = (dinner, routerHistory) => {
+  return dispatch => {
+    return fetch(`${API_URL}/dinners/${dinner.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ dinner })
+    })
+    .then(res => res.json())
+    .then(dinner => {
+      dispatch(substituteDinner(dinner));
+      routerHistory.replace('/dinners')
+    }).catch(err => console.log(err));
   };
 };
