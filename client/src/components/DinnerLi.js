@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Image from './Image';
+import { connect } from 'react-redux';
+import { updateDinner } from '../actions/dinners';
 
 class DinnerLi extends Component {
   constructor(props) {
@@ -46,4 +48,4 @@ class DinnerLi extends Component {
   }
 };
 
-export default DinnerLi;
+export default connect(null, { updateDinner} )(DinnerLi);
