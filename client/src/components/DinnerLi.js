@@ -18,6 +18,17 @@ class DinnerLi extends Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({id: this.props.dinner.id});
+    this.setState({title: this.props.dinner.title});
+    this.setState({rating: this.props.dinner.rating});
+    this.setState({ingredients_attributes: this.props.dinner.ingredients});
+    this.setState({directions_attributes: this.props.dinner.directions});
+    this.setState({image_attributes: this.props.dinner.image});
+    console.log(this.props.dinner.title);
+    console.log(this.state)
+  }
+
   handleClick = () => {
     // let currentVotes = this.state.votes
     // this.setState({
