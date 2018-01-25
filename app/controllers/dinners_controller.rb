@@ -21,6 +21,11 @@ class DinnersController < ApplicationController
     end
   end
 
+  def update
+    @dinner.update(dinner_params)
+    render json: @dinner, status: :ok
+  end
+
   def destroy
     @dinner.destroy
     head :no_content
