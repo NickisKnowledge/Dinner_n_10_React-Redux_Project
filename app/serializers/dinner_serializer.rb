@@ -1,5 +1,5 @@
 class DinnerSerializer < ActiveModel::Serializer
-  attributes :id, :title, :created_at
+  attributes :id, :title, :rating, :created_at
 
   has_many :directions
   has_many :ingredients
