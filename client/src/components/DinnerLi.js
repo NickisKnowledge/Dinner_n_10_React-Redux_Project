@@ -32,6 +32,13 @@ class DinnerLi extends Component {
     this.setState({rating:  currentRating += 1});
    };
 
+   componentWillUpdate(nextProps, nextState) {
+     if (nextProps.dinner.rating !== nextState.rating) {
+       // console.log(nextState);
+        this.props.updateDinner(nextState, this.props.history)
+     };
+   };
+
   render() {
     const { dinner, url } = this.props;
     let keyword = dinner.rating === 1 ? 'like' : 'likes';
