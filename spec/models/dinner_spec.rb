@@ -1,23 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe Dinner, type: :model do
-  it { should have_many(:directions) }
-  it { should have_one(:image) }
-  it { should have_many(:ingredients)}
+  it { expect have_many(:directions) }
+  it { expect have_one(:image) }
+  it { expect have_many(:ingredients)}
 
   it "should validate the presence of it's title attribute" do
-    should validate_presence_of(:title)
+    expect validate_presence_of(:title)
+  end
+
+  it "it's rating attribute, shuold be set to zero" do
+    dinner = FactoryBot.build(:dinner)
+    expect dinner.rating == 0
   end
 
   it "should validate the presence of it's associated model Direction" do
-    should validate_presence_of(:directions)
+    expect validate_presence_of(:directions)
   end
 
   it "should validate the presence of it's associated model Image" do
-    should validate_presence_of(:image)
+    expect validate_presence_of(:image)
   end
 
   it "should validate the presence of it's associated model Ingredient" do
-    should validate_presence_of(:ingredients)
+    expect validate_presence_of(:ingredients)
   end
 end
