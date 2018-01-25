@@ -25,19 +25,16 @@ class DinnerLi extends Component {
     this.setState({ingredients_attributes: this.props.dinner.ingredients});
     this.setState({directions_attributes: this.props.dinner.directions});
     this.setState({image_attributes: this.props.dinner.image});
-    console.log(this.props.dinner.title);
-    console.log(this.state)
   }
 
   handleClick = () => {
-    // let currentVotes = this.state.votes
-    // this.setState({
-    //   votes:  currentVotes += 1
-    // });
-  };
+    let currentRating = this.state.rating
+    this.setState({rating:  currentRating += 1});
+   };
 
   render() {
     const { dinner, url } = this.props;
+    let keyword = dinner.rating === 1 ? 'like' : 'likes';
 
     return(
       <div>
@@ -54,8 +51,8 @@ class DinnerLi extends Component {
             />
           </Link>
           <input type='button' value='Like me' onClick={this.handleClick.bind(this) } />
-          <div>
-            {dinner.rating}
+          <div style={{display: 'inline', marginLeft: 10}}>
+            { dinner.rating} {keyword} | {this.state.rating}
           </div>
         </div>
         <hr className='headerDivider' />
