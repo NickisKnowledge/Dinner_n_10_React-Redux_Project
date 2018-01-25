@@ -34,7 +34,6 @@ class DinnerLi extends Component {
 
    componentWillUpdate(nextProps, nextState) {
      if (nextProps.dinner.rating !== nextState.rating) {
-       // console.log(nextState);
         this.props.updateDinner(nextState, this.props.history)
      };
    };
@@ -59,7 +58,7 @@ class DinnerLi extends Component {
           </Link>
           <input type='button' value='Like me' onClick={this.handleClick.bind(this) } />
           <div style={{display: 'inline', marginLeft: 10}}>
-            { dinner.rating} {keyword} | {this.state.rating}
+            { dinner.rating} {keyword}
           </div>
         </div>
         <hr className='headerDivider' />
