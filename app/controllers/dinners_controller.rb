@@ -1,5 +1,5 @@
 class DinnersController < ApplicationController
-  before_action :set_dinner, only: [:show, :destroy]
+  before_action :set_dinner, only: [:show, :destroy, :update]
 
   def index
     @dinners = Dinner.all
@@ -29,7 +29,9 @@ class DinnersController < ApplicationController
   private
   def dinner_params
     params.require(:dinner).permit(
+      :id,
       :title,
+      :rating,
       :image,
       image_attributes: [ :id, :name, :url ],
       ingredients_attributes: [ :id, :name ],
