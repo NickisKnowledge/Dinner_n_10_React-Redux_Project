@@ -13,6 +13,11 @@ export default (state = [], action) => {
       return action.dinners;
     }
 
+    case 'SUBSTITUTE_DINNER': {
+      const index = state.findIndex(dinner => dinner.id === action.dinner.id);
+      return [...state.slice(0, index), action.dinner, ...state.slice(index+1)]
+    }
+
     default: {
       return state;
     }
