@@ -31,7 +31,7 @@ class DinnerList extends Component {
       });
 
     let sortedSearchedDinners = this.sortedByRating(searchedDinners)
-    console.log(sortedSearchedDinners);
+    this.setState({ selectedDinners: sortedSearchedDinners });
     };
 
   render() {
