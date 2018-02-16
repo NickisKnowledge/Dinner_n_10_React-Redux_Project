@@ -61,7 +61,7 @@ export const deleteDinner = (dinnerId, routerHistory) => {
   };
 };
 
-export const updateDinner = (dinner, routerHistory) => {
+export const updateDinner = (dinner) => {
   return dispatch => {
     return fetch(`${API_URL}/dinners/${dinner.id}`, {
       method: 'PUT',
@@ -73,7 +73,6 @@ export const updateDinner = (dinner, routerHistory) => {
     .then(res => res.json())
     .then(dinner => {
       dispatch(substituteDinner(dinner));
-      routerHistory.replace('/dinners')
     }).catch(err => console.log(err));
   };
 };

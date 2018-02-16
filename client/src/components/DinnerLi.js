@@ -5,37 +5,11 @@ import { connect } from 'react-redux';
 import { updateDinner } from '../actions/dinners';
 
 class DinnerLi extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      id: '',
-      title: '',
-      rating: 0,
-      ingredients_attributes: [{ name: '' }],
-      directions_attributes: [{ step: '' }],
-      image_attributes: {url: '', name: ''},
-    };
-  }
-
-  componentDidMount() {
-    this.setState({id: this.props.dinner.id});
-    this.setState({title: this.props.dinner.title});
-    this.setState({rating: this.props.dinner.rating});
-    this.setState({ingredients_attributes: this.props.dinner.ingredients});
-    this.setState({directions_attributes: this.props.dinner.directions});
-    this.setState({image_attributes: this.props.dinner.image});
-  }
 
   handleClick = () => {
-    let currentRating = this.state.rating
-    this.setState({rating:  currentRating += 1});
-   };
-
-   componentWillUpdate(nextProps, nextState) {
-     if (nextProps.dinner.rating !== nextState.rating) {
-        this.props.updateDinner(nextState, this.props.history)
-     };
+    let currentDinner = this.props.dinner
+    currentDinner.rating += 1;
+    this.props.updateDinner(currentDinner);
    };
 
   render() {
