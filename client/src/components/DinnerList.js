@@ -8,7 +8,7 @@ class DinnerList extends Component {
     this.state = {
       searchWord: '',
       selectedDinners: [],
-    }
+    };
   }
 
   sortedByRating = dinners =>
@@ -23,22 +23,22 @@ class DinnerList extends Component {
       this.setState({ searchWord: event.target.value });
     };
 
-    filterDinners = () => {
+    filterAndSortDinners = () => {
       let keyword = this.state.searchWord.toLowerCase();
       let searchedDinners = this.props.dinners.filter(dinner => {
         let title = dinner.title.toLowerCase();
         return title.includes(keyword);
       });
 
-    let sortedSearchedDinners = this.sortedByRating(searchedDinners)
-    this.setState({ selectedDinners: sortedSearchedDinners });
+      let sortedSearchedDinners = this.sortedByRating(searchedDinners);
+
+      this.setState({ selectedDinners: sortedSearchedDinners });
     };
 
   render() {
     const { dinners, url } = this.props;
     const sortedDinners = this.sortedByRating(dinners);
     let renderDinners;
-
     if (this.state.selectedDinners.length !== 0) {
       renderDinners = this.state.selectedDinners.map(dinner =>
         <DinnerLi dinner={dinner} url={url} key={dinner.id} />
@@ -58,7 +58,11 @@ class DinnerList extends Component {
             value={this.state.searchWord}
             onChange={this.handleInput}
           />< br />
-          <input type='button' value='Search' onClick={this.filterDinners.bind(this)}/>
+          <input
+            type='button'
+            value='Search'
+            onClick={this.filterAndSortDinners.bind(this)}
+          />
         </div>
         {renderDinners}
       </div>
