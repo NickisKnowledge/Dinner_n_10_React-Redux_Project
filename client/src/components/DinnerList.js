@@ -7,7 +7,7 @@ class DinnerList extends Component {
 
     this.state = {
       searchWord: '',
-      selectedDinners: []
+      selectedDinners: [],
     }
   }
 
@@ -37,9 +37,17 @@ class DinnerList extends Component {
   render() {
     const { dinners, url } = this.props;
     const sortedDinners = this.sortedByRating(dinners);
-    const renderDinners = sortedDinners.map(dinner =>
-      <DinnerLi dinner={dinner} url={url} key={dinner.id} />
-    );
+    let renderDinners;
+
+    if (this.state.selectedDinners.length !== 0) {
+      renderDinners = this.state.selectedDinners.map(dinner =>
+        <DinnerLi dinner={dinner} url={url} key={dinner.id} />
+      );
+    } else {
+      renderDinners = sortedDinners.map(dinner =>
+        <DinnerLi dinner={dinner} url={url} key={dinner.id} />
+      );
+    };
 
     return (
       <div>
