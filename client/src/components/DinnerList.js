@@ -30,7 +30,8 @@ class DinnerList extends Component {
         return title.includes(keyword);
       });
 
-    console.log(searchedDinners);
+    let sortedSearchedDinners = this.sortedByRating(searchedDinners)
+    console.log(sortedSearchedDinners);
     };
 
   render() {
