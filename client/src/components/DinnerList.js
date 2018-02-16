@@ -21,7 +21,18 @@ class DinnerList extends Component {
 
     handleInput = event => {
       this.setState({ searchWord: event.target.value });
-    }
+    };
+
+    filterDinners = () => {
+      let keyword = this.state.searchWord.toLowerCase();
+      let searchedDinners = this.props.dinners.filter(dinner => {
+        let title = dinner.title.toLowerCase();
+        return title.includes(keyword);
+      });
+
+    console.log(searchedDinners);
+    };
+
   render() {
     const { dinners, url } = this.props;
     const sortedDinners = this.sortedByRating(dinners);
@@ -38,7 +49,7 @@ class DinnerList extends Component {
             value={this.state.searchWord}
             onChange={this.handleInput}
           />< br />
-          <input type='button' value='Search' />
+          <input type='button' value='Search' onClick={this.filterDinners.bind(this)}/>
         </div>
         {renderDinners}
       </div>
