@@ -8,6 +8,7 @@ class DinnerList extends Component {
     this.state = {
       searchWord: '',
       selectedDinners: [],
+      message: '',
     };
   }
 
@@ -32,7 +33,13 @@ class DinnerList extends Component {
 
       let sortedSearchedDinners = this.sortedByRating(searchedDinners);
 
-      this.setState({ selectedDinners: sortedSearchedDinners });
+      if (searchedDinners.length === 0) {
+        this.setState({ message: 'Sorry, that word was not found in any dinner title' });
+      } else {
+        this.setState({ selectedDinners: sortedSearchedDinners });
+        this.setState({ searchWord: '' });
+        this.setState({ message: '' });
+      };
     };
 
   render() {
@@ -64,6 +71,9 @@ class DinnerList extends Component {
             onClick={this.filterAndSortDinners.bind(this)}
           />
         </div>
+        <label style={{ display: 'block', textAlign: 'center', color: 'black' }}>
+          {this.state.message}
+        </label>
         {renderDinners}
       </div>
     );
