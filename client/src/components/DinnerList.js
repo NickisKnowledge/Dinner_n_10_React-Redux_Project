@@ -24,19 +24,17 @@ class DinnerList extends Component {
       this.setState({ searchWord: event.target.value });
     };
 
-    filterAndSortDinners = () => {
+    filterDinners = () => {
       let keyword = this.state.searchWord.toLowerCase();
       let searchedDinners = this.props.dinners.filter(dinner => {
         let title = dinner.title.toLowerCase();
         return title.includes(keyword);
       });
 
-      let sortedSearchedDinners = this.sortedByRating(searchedDinners);
-
       if (searchedDinners.length === 0) {
         this.setState({ message: 'Sorry, that word was not found in any dinner title' });
       } else {
-        this.setState({ selectedDinners: sortedSearchedDinners });
+        this.setState({ selectedDinners: searchedDinners });
         this.setState({ searchWord: '' });
         this.setState({ message: '' });
       };
@@ -68,7 +66,7 @@ class DinnerList extends Component {
           <input
             type='button'
             value='Search'
-            onClick={this.filterAndSortDinners.bind(this)}
+            onClick={this.filterDinners.bind(this)}
           />
         </div>
         <label style={{ display: 'block', textAlign: 'center', color: 'black' }}>
